@@ -46,11 +46,15 @@ p{
 `
 
 export const NavCart = styled.a`
-  color: ${props =>props.theme['orange-800']};
+  
   padding: 0.5rem;
   background-color: ${props=> props.theme['orange-100']};
   border-radius: 6px;
   height: 2.375rem;
   width: 2.375rem;
   cursor: pointer;
+
+  p{
+    color: ${props =>props.theme['orange-800']};
+  }
 `

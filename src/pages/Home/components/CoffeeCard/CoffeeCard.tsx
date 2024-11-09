@@ -14,7 +14,10 @@ interface CoffeeCardProps {
   coffee: Coffee;
 }
 
- 
+interface CoffeeWithQuantity extends Coffee {
+  quantity?: number;
+} 
+
 export function CoffeeCard({ coffee }: CoffeeCardProps) {
 
   const [coffeeQuantity, setCoffeeQuantity] = useState(0);
@@ -37,11 +40,15 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
 
   }, [coffeeQuantity]);
 
-  function handleBuyCoffee(){
-    console.log(coffeeQuantity)
+  function handleBuyCoffee(coffeeProp: CoffeeWithQuantity){
+    if (coffeeQuantity === 0) return
+    
+    coffeeProp.quantity = coffeeQuantity;
+    console.log(coffeeProp)
     setCoffeeQuantity(0);
   }
 
+  
   return (
     <CoffeeCardStyle key={coffee.name}>
       <CoffeeCardInfo>
@@ -78,7 +85,7 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
             <button onClick={handlePlusCoffeeQuantity}> <Plus weight='fill' size={18}/></button>
           </InputQuantity>
 
-        <button disabled={coffeeAllowedQuantity} onClick={handleBuyCoffee}> <ShoppingCartSimple weight='fill' size={22}/> </button>
+        <button disabled={coffeeAllowedQuantity} onClick={() => handleBuyCoffee(coffee)}> <ShoppingCartSimple weight='fill' size={22}/> </button>
       </CoffeCardBuy>
     </CoffeeCardStyle>
   );
