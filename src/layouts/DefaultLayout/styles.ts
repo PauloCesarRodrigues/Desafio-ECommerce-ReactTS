@@ -45,7 +45,7 @@ p{
 
 `
 
-export const NavCart = styled.a`
+export const NavCart = styled.div`
   
   padding: 0.5rem;
   background-color: ${props=> props.theme['orange-100']};

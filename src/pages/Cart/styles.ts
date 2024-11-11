@@ -4,7 +4,7 @@ export const CartContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
 `
 
 export const FormColumn = styled.div`
@@ -25,18 +25,10 @@ export const FormColumn = styled.div`
 
 export const CartForm = styled.div`
   width: 53.2rem;
-  height: 31.25rem;
+  height: 32rem;
   background-color: ${props => props.theme["white-500"]};
   border-radius: 6px;
 `
-
-export const CartPayment = styled.div`
-  background-color: ${props => props.theme["white-500"]};
-  height: 17.3rem;
-  width: 53.2rem;
-  border-radius: 8px;
-`
-
 
 export const CartFormHeader = styled.header`
 
@@ -74,12 +66,172 @@ export const CartFormHeaderText = styled.div`
 `
 
 
-export const FormData = styled.div``
+export const FormData = styled.div`
+  form{
+    display: flex;
+    flex-direction: column;
 
-export const FormDataNumberAndComplement = styled.div``
+    margin-right: 3.25rem;
+    margin-left:  3.85rem;
+    gap: 0.5rem;
+  }
 
-export const FormDataDistrictCityUF = styled.div``
+input{
+  background-color: ${props => props.theme["white-700"]};
+  border: 1.5px solid ${props => props.theme["white-900"]};
+  border-radius: 4px;
 
+  height: 3.4rem;
+
+  margin-bottom:1.25rem;
+
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  font-size: 1rem;
+  color: ${props => props.theme["brown-300"]};
+  font-weight: normal;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]{
+  width: 16.5rem
+}
+
+input:focus{
+  border: 1.5px solid ${props => props.theme["orange-800"]};
+  outline: none;
+}
+
+input::placeholder{
+  font-size: 1rem;
+  color: ${props => props.theme["brown-300"]};
+  font-weight: normal;
+}
+`
+
+export const FormDataNumberAndComplement = styled.div`
+  display: flex;
+  gap: 1rem;  
+
+  input[type="text"]{
+  flex-grow: 1;
+}
+`
+
+export const FormDataDistrictCityUF = styled.div`
+  display: flex;
+  gap: 1rem; 
+  box-sizing: border-box;
+  width: 100%;
+`;
+
+export const FormDataDistrict = styled.div`
+input{
+  width: 16.5rem;
+}
+`
+
+export const FormDataCity = styled.div`
+ input{
+  width: 23.1rem;
+ }
+`
+
+export const FormDataUf = styled.div`
+ input{
+  width: 4.5rem;
+}
+`
+
+export const CartPaymentMethod = styled.div`
+  background-color: ${props => props.theme["white-500"]};
+  height: 17.3rem;
+  width: 53.2rem;
+  border-radius: 8px;
+`
+
+export const CartPaymentMethodHeader = styled.header`
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  gap: 0.2rem;
+
+  margin: 3.75rem 0 3.125rem 3.5rem;
+
+  color: ${props => props.theme["purple-500"]}; 
+`
+
+export const CartPaymentMethodHeaderText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h2{
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-family: ${props => props.theme["default-font"]};
+    color: ${props => props.theme["brown-700"]};
+
+    margin-bottom:  0.5rem;
+  }
+
+  p{
+    font-size: 1rem;
+    font-family: ${props => props.theme["default-font"]};
+    color: ${props => props.theme["brown-500"]};
+    font-weight: normal;
+  }
+`
+
+export const PaymentMethods = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin: 0 3.25rem 0 3.25rem;
+
+  button{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+
+    height: 4rem;
+    width: 14.5rem;
+
+    background-color: ${props => props.theme["white-900"]};
+    color: ${props => props.theme["purple-500"]};
+    border-radius: 6px;
+
+    box-sizing: border-box;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+    gap: 1rem;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    P{
+      font-size: 1rem;
+      color: ${props => props.theme["brown-500"]};
+      font-weight: normal;
+      font-family: ${props => props.theme["default-font"]};
+    }
+  }
+
+  button:hover{
+    background-color: ${props => props.theme["brown-100"]};
+  }
+`
 
 
 
