@@ -1,5 +1,7 @@
-import { Bank, CreditCard, CurrencyDollar, MapPin, Money } from "phosphor-react";
-import { CartCheckout, CartContainer, CartForm, CartFormHeader, CartFormHeaderText, CheckoutColumn, FormColumn, FormDataDistrictCityUF, FormDataNumberAndComplement, FormData, FormDataDistrict, FormDataCity, FormDataUf, CartPaymentMethod, CartPaymentMethodHeader, CartPaymentMethodHeaderText, PaymentMethods } from "./styles";
+import { MapPin} from "phosphor-react";
+import { CartContainer, CartForm, CartFormHeader, CartFormHeaderText, FormColumn, FormDataDistrictCityUF, FormDataNumberAndComplement, FormData, FormDataDistrict, FormDataCity, FormDataUf} from "./styles";
+import { Checkout } from './components/Checkout/Checkout'
+import { PaymentMethod } from "./components/PaymentMethod/PaymentMethod";
 
 export function Cart(){
   return(
@@ -47,31 +49,11 @@ export function Cart(){
         </FormData>
       </CartForm>
 
+<PaymentMethod/>
 
-      <CartPaymentMethod>
-        <CartPaymentMethodHeader>
-          <CurrencyDollar size={28}/>
-
-          <CartPaymentMethodHeaderText>
-            <h2>Pagamento</h2>
-            <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
-          </CartPaymentMethodHeaderText>
-
-        </CartPaymentMethodHeader>
-
-        <PaymentMethods>
-          <button><CreditCard size={20} /> <p>CARTÃO DE CRÉDITO </p></button>
-          <button><Bank size={20} /> <p>CARTÃO DE DÉBITO</p></button>
-          <button><Money size={20} /> <p>DINHEIRO</p></button>
-        </PaymentMethods>
-
-      </CartPaymentMethod>
     </FormColumn>
 
-    <CheckoutColumn>
-      <h1>Cafés selecionados</h1>
-      <CartCheckout></CartCheckout>
-    </CheckoutColumn>
+<Checkout/>
 
     </CartContainer>
   )

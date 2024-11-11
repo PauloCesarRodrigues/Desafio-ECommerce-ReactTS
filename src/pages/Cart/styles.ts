@@ -4,7 +4,6 @@ export const CartContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  margin-top: 4rem;
 `
 
 export const FormColumn = styled.div`
@@ -148,119 +147,5 @@ export const FormDataUf = styled.div`
  input{
   width: 4.5rem;
 }
-`
-
-export const CartPaymentMethod = styled.div`
-  background-color: ${props => props.theme["white-500"]};
-  height: 17.3rem;
-  width: 53.2rem;
-  border-radius: 8px;
-`
-
-export const CartPaymentMethodHeader = styled.header`
-
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-
-  gap: 0.2rem;
-
-  margin: 3.75rem 0 3.125rem 3.5rem;
-
-  color: ${props => props.theme["purple-500"]}; 
-`
-
-export const CartPaymentMethodHeaderText = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  h2{
-    font-size: 1.3rem;
-    font-weight: normal;
-    font-family: ${props => props.theme["default-font"]};
-    color: ${props => props.theme["brown-700"]};
-
-    margin-bottom:  0.5rem;
-  }
-
-  p{
-    font-size: 1rem;
-    font-family: ${props => props.theme["default-font"]};
-    color: ${props => props.theme["brown-500"]};
-    font-weight: normal;
-  }
-`
-
-export const PaymentMethods = styled.div`
-  display: flex;
-  gap: 1rem;
-  margin: 0 3.25rem 0 3.25rem;
-
-  button{
-    display: flex;
-    flex-direction: row;
-    
-    align-items: center;
-
-    height: 4rem;
-    width: 14.5rem;
-
-    background-color: ${props => props.theme["white-900"]};
-    color: ${props => props.theme["purple-500"]};
-    border-radius: 6px;
-
-    box-sizing: border-box;
-    padding-left: 1.5rem;
-    padding-right: 1rem;
-    gap: 1rem;
-
-    border: none;
-    outline: none;
-
-    cursor: pointer;
-
-    P{
-      font-size: 1rem;
-      color: ${props => props.theme["brown-500"]};
-      font-weight: normal;
-      font-family: ${props => props.theme["default-font"]};
-    }
-  }
-
-  button:hover{
-    background-color: ${props => props.theme["brown-100"]};
-  }
-`
-
-
-
-
-
-
-
-
-
-export const CheckoutColumn = styled.div`
-  margin-right: 13.4rem;
-
-  font-family: ${props => props.theme["title-font"]};
-  font-size: 0.6rem;
-  line-height: 1.3;
-
-  h1{
-    -webkit-text-stroke: 0.5px ${props => props.theme["brown-500"]};
-    margin-bottom: 1.4rem;
-  } 
-`
-
-
-
-
-export const CartCheckout = styled.div`
-  width: 37.5rem;
-  min-height: 18.75rem;
-  background-color: ${props => props.theme["white-500"]};
-  border-radius: 6px 44px
 `
 
