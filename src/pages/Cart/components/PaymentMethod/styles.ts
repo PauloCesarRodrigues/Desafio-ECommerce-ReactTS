@@ -46,37 +46,45 @@ export const PaymentMethods = styled.div`
   display: flex;
   gap: 1rem;
   margin: 0 3.25rem 0 3.25rem;
+`
 
-  button{
-    display: flex;
-    flex-direction: row;
-    
-    align-items: center;
+interface PaymentButtonProp{
+  $isActive: boolean;
+}
 
-    height: 4rem;
-    width: 14.5rem;
 
-    background-color: ${props => props.theme["white-900"]};
-    color: ${props => props.theme["purple-500"]};
-    border-radius: 6px;
+export const PaymentButton = styled.button<PaymentButtonProp>`
 
-    box-sizing: border-box;
-    padding-left: 1.5rem;
-    padding-right: 1rem;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
 
-    border: none;
-    outline: none;
+  height: 4rem;
+  width: 14.5rem;
 
-    cursor: pointer;
+  background-color: ${({ $isActive, theme }) => $isActive ? theme["purple-100"] : theme["white-900"]};
+  outline: ${({ $isActive, theme }) => $isActive ? `2px solid ${theme["purple-500"]}` : "none"};
 
-    P{
-      font-size: 1rem;
-      color: ${props => props.theme["brown-500"]};
-      font-weight: normal;
-      font-family: ${props => props.theme["default-font"]};
-    }
+  color: ${props => props.theme["purple-500"]};
+  border-radius: 6px;
+
+  box-sizing: border-box;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+  gap: 1rem;
+
+  border: none;
+
+  cursor: pointer;
+
+  P{
+    font-size: 1rem;
+    color: ${props => props.theme["brown-500"]};
+    font-weight: normal;
+    font-family: ${props => props.theme["default-font"]};
   }
+  
 
   button:hover{
     background-color: ${props => props.theme["brown-100"]};

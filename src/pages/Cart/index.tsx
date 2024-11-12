@@ -1,7 +1,9 @@
 import { MapPin} from "phosphor-react";
-import { CartContainer, CartForm, CartFormHeader, CartFormHeaderText, FormColumn, FormDataDistrictCityUF, FormDataNumberAndComplement, FormData, FormDataDistrict, FormDataCity, FormDataUf} from "./styles";
-import { Checkout } from './components/Checkout/Checkout'
-import { PaymentMethod } from "./components/PaymentMethod/PaymentMethod";
+import { CartContainer, FormCartContainer, CartFormHeader, CartFormHeaderText, FormColumn} from "./styles";
+import { Checkout } from './components/Checkout/index'
+import { PaymentMethod } from "./components/PaymentMethod/index";
+import { FormCart } from "./components/FormCart";
+
 
 export function Cart(){
   return(
@@ -9,7 +11,7 @@ export function Cart(){
 
     <FormColumn>
       <h1>Complete seu Pedido</h1>
-      <CartForm>
+      <FormCartContainer>
 
         <CartFormHeader>
           <MapPin size={28}/>
@@ -18,42 +20,15 @@ export function Cart(){
             <p>Informe o endereço onde deseja receber seu pedido</p>
           </CartFormHeaderText>
         </CartFormHeader>
+    
+        <FormCart/>
+      </FormCartContainer>
 
-        <FormData>
-          <form>
-            <input type="number" min={0} max={99999999} placeholder="CEP"/>
-            <input type="text" placeholder="Rua"/>
-
-            <FormDataNumberAndComplement>
-              <input type="number" placeholder="Número"/>
-              <input type="text" placeholder="Complemento" />
-            </FormDataNumberAndComplement>
-
-            <FormDataDistrictCityUF>
-
-              <FormDataDistrict>
-                <input type="text" placeholder="Bairro"/>
-              </FormDataDistrict>
-
-              <FormDataCity>
-                <input type="text" placeholder="Cidade"/>
-              </FormDataCity>
-
-              <FormDataUf>
-                <input type="text" placeholder="UF"/>
-              </FormDataUf>
-
-            </FormDataDistrictCityUF>
-            
-          </form>
-        </FormData>
-      </CartForm>
-
-<PaymentMethod/>
+      <PaymentMethod/>
 
     </FormColumn>
 
-<Checkout/>
+    <Checkout/>
 
     </CartContainer>
   )
