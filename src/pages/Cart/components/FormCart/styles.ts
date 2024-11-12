@@ -57,6 +57,12 @@ export const FormDataNumberAndComplement = styled.div`
   input[type="text"]{
   flex-grow: 1;
 }
+
+input[type="text"]::before{
+  content: 'Opcional'
+  
+}
+
 `
 
 export const FormDataDistrictCityUF = styled.div`

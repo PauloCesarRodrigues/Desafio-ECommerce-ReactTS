@@ -1,3 +1,4 @@
+ 
 import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react";
 import {
   CartPaymentMethod,
@@ -14,17 +15,32 @@ export function PaymentMethod() {
   const [creditCardStatus, setCreditCardStatus] = useState(false);
   const [debitCardStatus, setDebitCardStatus] = useState(false);
   const [moneyStatus, setMoneyStatus] = useState(false);
+  let selectedButton
 
   function handleSelectPaymentMethod(paymentMethod: string){
     clearPaymentMethod()
 
-    if(paymentMethod === 'CreditCard') setCreditCardStatus(true)
-    if(paymentMethod === 'DebitCard') setDebitCardStatus(true)
-    if(paymentMethod === 'Money') setMoneyStatus(true)
-    
+    if(paymentMethod === 'CreditCard') {
+      setCreditCardStatus(true)
+      selectedButton = 'Cartão de Crédito'
+      console.log(selectedButton)
+    }
+
+    if(paymentMethod === 'DebitCard') {
+      setDebitCardStatus(true)
+      selectedButton = 'Cartão de Débito'
+      console.log(selectedButton)
+    }
+
+    if(paymentMethod === 'Money') {
+      setMoneyStatus(true)
+      selectedButton = 'Dinheiro'
+      console.log(selectedButton)
+    }
   }
 
   function clearPaymentMethod(){
+    selectedButton = ''
     setCreditCardStatus(false) 
     setDebitCardStatus(false)
     setMoneyStatus(false)

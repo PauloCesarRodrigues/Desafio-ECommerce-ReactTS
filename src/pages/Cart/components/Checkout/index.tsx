@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Trash } from "phosphor-react";
 import {
   CartCheckout,
   CartCheckoutDeliveryPrice,
@@ -5,15 +7,29 @@ import {
   CartCheckoutTotalItem,
   CartCheckoutTotalItemsPrice,
   CheckoutCoffees,
+  CheckoutCoffeesConfigButton,
+  CheckoutCoffeesContainer,
+  CheckoutCoffeesContainerInfo,
+  CheckoutCoffeesContainerInfoNoImage,
   CheckoutColumn,
+  LineCoffee,
 } from "./styles";
 
+import { useFormContext } from "react-hook-form";
+
 export function Checkout() {
+  const { handleSubmit } = useFormContext();
+
+  function onSubmit(data: any) {
+    console.log(data);
+    console.log("Indo para tela final");
+  }
+
   const cafes = [
     {
       description: "aaaa",
       image: "src/pages/Home/images/coffees/expressoAmericano.png",
-      name: "aaaa",
+      name: "Expresso Tradicional",
       quantity: 1,
       tags: ["tag1", "tag2"],
       value: 9.9,
@@ -24,25 +40,33 @@ export function Checkout() {
     <CheckoutColumn>
       <h1>Cafés selecionados</h1>
       <CartCheckout>
-
         <CheckoutCoffees>
+          <CheckoutCoffeesContainer>
+          <img src={cafes[0].image} />
 
-          <img />
-          <div>
-            <p>Expresso Tradicional</p>
-            <p> R$ {`9,90`} </p>
-          </div>
+          <CheckoutCoffeesContainerInfoNoImage>
+            <CheckoutCoffeesContainerInfo>
+              <p>{cafes[0].name}</p>
+              <span>
+                R$
+                {cafes[0].value.toLocaleString("pt-BR", {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </span>
+            </CheckoutCoffeesContainerInfo>
 
-          <div>
-            <p> - 1 + </p>
-            <p> Remover </p>
-          </div>
-
-
+            <CheckoutCoffeesConfigButton>
+              <p> - 1 + </p>
+              <button> <Trash size={21}/> <p>REMOVER</p></button>
+            </CheckoutCoffeesConfigButton>
+            
+          </CheckoutCoffeesContainerInfoNoImage>
+          </CheckoutCoffeesContainer>
+          <LineCoffee> </LineCoffee>
         </CheckoutCoffees>
 
         <CartCheckoutPrice>
-          <span></span>
           <CartCheckoutTotalItem>
             <p> Total de itens </p>
             <p> R$ {`29,70`}</p>
@@ -58,7 +82,10 @@ export function Checkout() {
             <p> R$ {`33,20`}</p>
           </CartCheckoutTotalItemsPrice>
 
-          <button> CONFIRMAR PEDIDO </button>
+          <button onClick={handleSubmit(onSubmit)} type="submit">
+            {" "}
+            CONFIRMAR PEDIDO{" "}
+          </button>
         </CartCheckoutPrice>
       </CartCheckout>
     </CheckoutColumn>
