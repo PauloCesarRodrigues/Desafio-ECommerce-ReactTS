@@ -59,7 +59,13 @@ export const NavCart = styled.div`
   }
 `
 
-export const CoffeeQuantityOrder = styled.span`
+  interface IsNotifyEmpty{
+    $isempty: boolean;
+  }
+
+export const CoffeeQuantityOrder = styled.span<IsNotifyEmpty>`
+  display: ${({ $isempty }) => ($isempty ? 'none' : 'block')};
+
   position: absolute;
   text-align: center;
   text-decoration: none;
@@ -74,7 +80,7 @@ export const CoffeeQuantityOrder = styled.span`
     line-height: 1.3;
     font-size: 0.8rem;
 
-    height: 1.5rem;
+    height: 1.4rem;
     width: 1.5rem;
     border-radius: 50%;
     background-color: ${props => props.theme["orange-800"]};
