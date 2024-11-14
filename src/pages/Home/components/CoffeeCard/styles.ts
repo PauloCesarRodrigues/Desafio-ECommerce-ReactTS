@@ -142,11 +142,11 @@ export const InputQuantity = styled.div`
   button{
     margin: 0;
     background-color: transparent;
-    color: ${props => props.theme["purple-800"]};
+    color: ${props => props.theme["purple-500"]};
   }
 
   button:hover{
-    color: ${props => props.theme["purple-500"]};
+    color: ${props => props.theme["purple-800"]};
     background-color: transparent;
   }
 `

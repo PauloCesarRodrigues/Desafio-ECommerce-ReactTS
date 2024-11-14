@@ -14,15 +14,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 import { FormProvider, useForm } from "react-hook-form";
 
-interface AddressProp {
-  cep: string;
-  street: string;
-  number: number;
-  complement?: string;
-  district: string;
-  city: string;
-  uf: string;
-}
 
 const newAddressValidationSchema = zod.object({
   cep: zod.string().min(8).max(8),
@@ -38,6 +29,15 @@ export function Cart() {
   const methods = useForm({
     resolver: zodResolver(newAddressValidationSchema),
   });
+
+
+  const address = function getAddress(street, number, distric, city, uf){
+    return (`Entrega em ${street}, ${number} ${distric} - ${city}, ${uf}`)
+  }
+
+  const paymentMethod =  function getPaymentMethod(paymentMethod){
+    return paymentMethod
+  }
 
   return (
     <CartContainer>
