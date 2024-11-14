@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom'
 import Logo from './assets/logo.svg'
-import { Header, HeaderNav, NavCart, NavLocation } from './styles'
+import { CoffeeQuantityOrder, Header, HeaderNav, NavCart, NavLocation } from './styles'
 import { MapPin, ShoppingCartSimple } from 'phosphor-react'
 
 export function Defaultlayout(){
@@ -19,7 +19,7 @@ export function Defaultlayout(){
         <NavCart>
           <Link to="/cart">
             <p><ShoppingCartSimple size={22} weight='fill'/></p>
-            <span></span>
+            <CoffeeQuantityOrder><p>{`3`}</p></CoffeeQuantityOrder>
           </Link>
         </NavCart>
 

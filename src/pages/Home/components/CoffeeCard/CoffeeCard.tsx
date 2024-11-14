@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CoffeCardBuy, CoffeCardPrice, CoffeeCardInfo, CoffeeCardStyle, Description, InputQuantity, Tags } from "./styles";
 import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
+import { OrderContext } from "../../../../context/OrderContext";
+
 
 interface Coffee {
   name: string;
@@ -18,7 +20,12 @@ interface CoffeeWithQuantity extends Coffee {
   quantity?: number;
 } 
 
+
 export function CoffeeCard({ coffee }: CoffeeCardProps) {
+
+  const context = useContext(OrderContext);
+  const { activeOrder, setActiveOrder } = context;
+  
 
   const [coffeeQuantity, setCoffeeQuantity] = useState(0);
 
@@ -40,13 +47,29 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
 
   }, [coffeeQuantity]);
 
-  function handleBuyCoffee(coffeeProp: CoffeeWithQuantity){
-    if (coffeeQuantity === 0) return
-    
+
+  function handleBuyCoffee(coffeeProp: CoffeeWithQuantity) {
+    if (coffeeQuantity === 0) return;
+  
     coffeeProp.quantity = coffeeQuantity;
-    console.log(coffeeProp)
-    setCoffeeQuantity(0);
+  
+    const updatedOrder = activeOrder.map((item) => {
+      if (item.name === coffeeProp.name) {
+        return { ...item, quantity: coffeeQuantity };
+      }
+      return item;
+    });
+  
+    const coffeeExists = activeOrder.some((item) => item.name === coffeeProp.name);
+    if (!coffeeExists) {
+      updatedOrder.push(coffeeProp);
+    }
+  
+    setActiveOrder(updatedOrder);
+    console.log(updatedOrder)
+    setCoffeeQuantity(0)
   }
+
 
   
   return (

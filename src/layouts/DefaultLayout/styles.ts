@@ -58,3 +58,30 @@ export const NavCart = styled.div`
     color: ${props =>props.theme['orange-800']};
   }
 `
+
+export const CoffeeQuantityOrder = styled.span`
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+
+  margin-left: 1rem;
+  margin-top: -3rem;
+
+  p{
+    color:${props => props.theme["white-100"]};
+    font-family: ${props=> props.theme["default-font"]};
+    font-weight: normal;
+    line-height: 1.3;
+    font-size: 0.8rem;
+
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: ${props => props.theme["orange-800"]};
+
+    padding-top: 0.2rem;
+
+    text-decoration: none;
+    display: inline-block;
+}
+`
