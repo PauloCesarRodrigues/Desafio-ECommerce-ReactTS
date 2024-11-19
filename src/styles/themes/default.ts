@@ -23,5 +23,7 @@ export const defaultTheme = {
   'white-900': '#E6E5E5',
   
   'default-font': '"Roboto", sans-serif',
-  'title-font': '"Baloo 2", serif;'
+  'title-font': '"Baloo 2", serif;',
+
+  'default-gradient': 'linear-gradient(to bottom right, #DBAC2C, #8047F8)'
 }

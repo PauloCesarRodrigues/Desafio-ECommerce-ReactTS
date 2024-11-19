@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import  Background  from './assets/Background.jpg'
+import  Background  from './assets/Background.png'
 
 
 export const BackgroundStyled = styled.div`

@@ -30,15 +30,6 @@ export function Cart() {
     resolver: zodResolver(newAddressValidationSchema),
   });
 
-
-  const address = function getAddress(street, number, distric, city, uf){
-    return (`Entrega em ${street}, ${number} ${distric} - ${city}, ${uf}`)
-  }
-
-  const paymentMethod =  function getPaymentMethod(paymentMethod){
-    return paymentMethod
-  }
-
   return (
     <CartContainer>
       <FormProvider {...methods}>

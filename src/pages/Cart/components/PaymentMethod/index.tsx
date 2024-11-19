@@ -1,4 +1,3 @@
- 
 import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react";
 import {
   CartPaymentMethod,
@@ -7,74 +6,60 @@ import {
   PaymentButton,
   PaymentMethods,
 } from "./styles";
-import { useState } from "react";
-
-
+import { useContext, useState } from "react";
+import { OrderDataContext } from "../../../../context/OrderDataContext";
 
 export function PaymentMethod() {
-  const [creditCardStatus, setCreditCardStatus] = useState(false);
-  const [debitCardStatus, setDebitCardStatus] = useState(false);
-  const [moneyStatus, setMoneyStatus] = useState(false);
-  let selectedButton
+  const [activePaymentMethod, setActivePaymentMethod] = useState<string | null>(null);
 
-  function handleSelectPaymentMethod(paymentMethod: string){
-    clearPaymentMethod()
+  const context = useContext(OrderDataContext);
+  const { setFinishedOrder } = context;
 
-    if(paymentMethod === 'CreditCard') {
-      setCreditCardStatus(true)
-      selectedButton = 'Cartão de Crédito'
-      console.log(selectedButton)
-    }
+  const paymentMethods: { [key: string]: string } = {
+    CreditCard: 'Cartão de Crédito',
+    DebitCard: 'Cartão de Débito',
+    Money: 'Dinheiro',
+  };
 
-    if(paymentMethod === 'DebitCard') {
-      setDebitCardStatus(true)
-      selectedButton = 'Cartão de Débito'
-      console.log(selectedButton)
-    }
+  function handleSelectPaymentMethod(paymentMethod: string) {
+    if (activePaymentMethod === paymentMethod) return;
 
-    if(paymentMethod === 'Money') {
-      setMoneyStatus(true)
-      selectedButton = 'Dinheiro'
-      console.log(selectedButton)
-    }
-  }
-
-  function clearPaymentMethod(){
-    selectedButton = ''
-    setCreditCardStatus(false) 
-    setDebitCardStatus(false)
-    setMoneyStatus(false)
+    setActivePaymentMethod(paymentMethod);
+    setFinishedOrder((prevOrder) => ({
+      ...(prevOrder || {
+        street: '',
+        number: 0,
+        district: '',
+        city: '',
+        uf: '',
+      }),
+      paymentMethod: paymentMethods[paymentMethod],
+    }));
   }
 
   return (
     <CartPaymentMethod>
       <CartPaymentMethodHeader>
         <CurrencyDollar size={28} />
-
         <CartPaymentMethodHeaderText>
           <h2>Pagamento</h2>
-          <p>
-            O pagamento é feito na entrega. Escolha a forma que deseja pagar
-          </p>
+          <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
         </CartPaymentMethodHeaderText>
       </CartPaymentMethodHeader>
 
       <PaymentMethods>
-        <PaymentButton
-          $isActive={creditCardStatus}
-          onClick={() => handleSelectPaymentMethod('CreditCard')}>
-          <CreditCard size={20} /> <p>CARTÃO DE CRÉDITO </p>
-        </PaymentButton>
-        <PaymentButton
-          $isActive={debitCardStatus}
-          onClick={() => handleSelectPaymentMethod("DebitCard")}>
-          <Bank size={20} /> <p>CARTÃO DE DÉBITO</p>
-        </PaymentButton>
-        <PaymentButton 
-          $isActive={moneyStatus}
-          onClick={() => handleSelectPaymentMethod("Money")}>
-          <Money size={20} /> <p>DINHEIRO</p>
-        </PaymentButton>
+        {Object.keys(paymentMethods).map((method) => (
+          <PaymentButton
+            key={method}
+            $isActive={activePaymentMethod === method}
+            onClick={() => handleSelectPaymentMethod(method)}
+          >
+            {method === 'CreditCard' && <CreditCard size={20} />}
+            {method === 'DebitCard' && <Bank size={20} />}
+            {method === 'Money' && <Money size={20} />}
+            <p>{paymentMethods[method]}</p>
+          </PaymentButton>
+        ))}
       </PaymentMethods>
     </CartPaymentMethod>
   );

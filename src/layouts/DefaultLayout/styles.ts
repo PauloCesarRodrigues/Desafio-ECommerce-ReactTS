@@ -41,6 +41,7 @@ p{
   line-height: 1.3;
   font-size: 0.875rem;
   font-family: ${props=> props.theme["brown-100"]};
+  font-weight: normal;
 }
 
 `

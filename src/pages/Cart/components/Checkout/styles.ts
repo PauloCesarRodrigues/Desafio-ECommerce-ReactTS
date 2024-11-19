@@ -10,6 +10,7 @@ export const CheckoutColumn = styled.div`
   margin-bottom: 2rem;
 
   h1{
+    margin-top: 1rem;
     -webkit-text-stroke: 0.5px ${props => props.theme["brown-500"]};
     margin-bottom: 1.4rem;
   } 
@@ -42,9 +43,6 @@ export const CartCheckoutPrice = styled.div`
 
     align-items: center;
 
-    font-size: 1rem;
-    color: ${props => props.theme["white-100"]};
-
     background-color: ${props => props.theme["orange-500"]};
     border-radius: 6px;
 
@@ -54,14 +52,29 @@ export const CartCheckoutPrice = styled.div`
     cursor: pointer;
     
     margin-bottom: 2rem;
+
   }
 
   button:hover{
     background-color: ${props => props.theme["orange-800"]};
   }
 
+  button a {
+    text-decoration: none;
+  }
+
+  button a:hover {
+    text-decoration: none; 
+  }
+
 `
 
+export const SubmitButtonText = styled.p`
+
+  font-size: 1rem;
+  color: ${props => props.theme["white-100"]};
+  
+`
 
 export const CartCheckoutTotalItem = styled.div`
   display: flex;

@@ -17,6 +17,7 @@ export const CoffeeSectionStyle = styled.section`
 `;
 
 export const ContainerCoffee = styled.div`
+  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 3.5rem 10rem 5rem 0;

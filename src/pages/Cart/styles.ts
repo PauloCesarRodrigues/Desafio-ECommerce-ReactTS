@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const CartContainer = styled.div`
-  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
@@ -19,6 +18,7 @@ export const FormColumn = styled.div`
   line-height: 1.3;
 
   h1{
+    margin-top: 1rem;
     -webkit-text-stroke: 0.5px ${props => props.theme["brown-500"]};
   } 
 `
