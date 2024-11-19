@@ -94,7 +94,7 @@ export const OrderInfoDiv = styled.div`
 
   span{
     margin-top: 0.2rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: ${props => props.theme["default-font"]};
     font-weight: bold;
   }
