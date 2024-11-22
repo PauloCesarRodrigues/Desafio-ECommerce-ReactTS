@@ -1,9 +1,10 @@
 import { Link, Outlet } from 'react-router-dom'
-import Logo from './assets/logo.svg'
+import Logo from './assets/logocoffee.svg'
 import { CoffeeQuantityOrder, Header, HeaderNav, NavCart, NavLocation } from './styles'
 import { MapPin, ShoppingCartSimple } from 'phosphor-react'
 import { useContext, useEffect, useState } from 'react'
 import { OrderContext } from '../../context/OrderContext'
+
 
 export function Defaultlayout(){
 
