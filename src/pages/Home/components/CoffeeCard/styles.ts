@@ -3,8 +3,19 @@ import styled from "styled-components";
 export const CoffeeSectionStyle = styled.section`
   position: absolute;
   z-index: 1000;
-  margin-top: -12rem;
   margin-left: 15rem;
+
+  @media screen and (max-width: 1200px){
+    margin-top: 10rem;
+  }
+
+  @media screen and (max-width: 700px){
+    margin-top: 15rem;
+  }
+
+  @media screen and (max-width: 600px){
+    margin-top: 20rem;
+  }
 
   h1{
     font-family: ${props => props.theme["title-font"]};
