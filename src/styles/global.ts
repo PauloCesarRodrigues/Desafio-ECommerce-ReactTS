@@ -12,6 +12,7 @@ body{
   background: ${props => props.theme['white-400']};
   color: ${props => props.theme['brown-600']};
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
   body,input,text area, button{

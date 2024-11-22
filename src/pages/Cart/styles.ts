@@ -4,6 +4,11 @@ export const CartContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+
+  @media screen and (max-width: 1300px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
 `
 
 export const FormColumn = styled.div`
@@ -21,6 +26,7 @@ export const FormColumn = styled.div`
     margin-top: 1rem;
     -webkit-text-stroke: 0.5px ${props => props.theme["brown-500"]};
   } 
+
 `
 
 export const FormCartContainer = styled.div`
@@ -28,6 +34,7 @@ export const FormCartContainer = styled.div`
   height: 32rem;
   background-color: ${props => props.theme["white-500"]};
   border-radius: 6px;
+  
 `
 
 export const CartFormHeader = styled.header`

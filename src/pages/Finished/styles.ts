@@ -7,11 +7,16 @@ export const FinishContainer = styled.div`
 
   margin-top: 7rem;
   margin-left: 15rem;
+
+  @media screen and (max-width: 1500px) {
+    grid-template-columns: 1fr;
+  }
 `
  
 export const FinishContainerInfoColumn = styled.div`
 
   gap: 1.5rem;
+  margin-right: 4rem;
 
   h2{
     color: ${props => props.theme["orange-800"]};
@@ -108,9 +113,8 @@ export const OrderInfoDiv = styled.div`
 
 export const FinishColumnIllustration = styled.div`
 
-
   margin-top: 6.7rem;
-  margin-right: 15rem;;
+  margin-right: 15rem;
 `
 
 
@@ -160,6 +164,14 @@ export const OrderNotFound = styled.div`
 
   p:hover{
     background-color: ${props => props.theme["orange-800"]};
+  }
+
+  @media screen and (max-width: 1000px) {
+    margin-right: -17rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    margin-right: -27rem;
   }
 
 `

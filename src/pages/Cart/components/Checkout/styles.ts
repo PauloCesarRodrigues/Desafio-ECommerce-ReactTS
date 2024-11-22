@@ -13,6 +13,12 @@ export const CheckoutColumn = styled.div`
     margin-top: 1rem;
     -webkit-text-stroke: 0.5px ${props => props.theme["brown-500"]};
     margin-bottom: 1.4rem;
+
+    @media screen and (max-width: 1300px) {
+    margin-left: 13rem;
+    margin-top: -4rem;
+  }
+
   } 
 `
 
@@ -21,6 +27,21 @@ export const CartCheckout = styled.div`
   min-height: 18.75rem;
   background-color: ${props => props.theme["white-500"]};
   border-radius: 6px 44px;
+  min-width: 23rem;
+
+  @media screen and (max-width: 1900px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 1500px) {
+    margin-right: 3rem;
+  }
+
+  @media screen and (max-width: 1300px) {
+    width: 53.2rem;
+    margin-left: 13rem;
+    margin-right: 0;
+  }
 `
 
 
@@ -66,6 +87,7 @@ export const CartCheckoutPrice = styled.div`
   button a:hover {
     text-decoration: none; 
   }
+  
 
 `
 
@@ -82,6 +104,8 @@ export const CartCheckoutTotalItem = styled.div`
   justify-content: space-between;
 
   margin-top: 1rem;
+
+
 `
 
 export const CartCheckoutDeliveryPrice = styled.div`
@@ -107,6 +131,12 @@ export const CheckoutCoffeesContainer = styled.div`
   flex-direction: row;
   margin-bottom: 2.625rem;
   gap: 1.5rem;
+
+  @media screen and (max-width: 1900px) {
+    gap: 1.5rem;
+  }
+
+  
 `
 
 

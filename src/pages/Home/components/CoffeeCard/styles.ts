@@ -21,7 +21,18 @@ export const ContainerCoffee = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 3.5rem 10rem 5rem 0;
-  gap: 5rem 2.7rem;;
+  gap: 5rem 2.7rem;
+
+  box-sizing: border-box;
+
+  @media screen and (max-width: 1900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 720px) {
+    gap: 5rem 3rem;
+  }
+
 `
 
 export const CoffeeCardStyle = styled.div`

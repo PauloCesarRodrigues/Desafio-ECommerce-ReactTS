@@ -80,10 +80,12 @@ export function CoffeeCheckout({ coffeeName, price, imgSrc, coffeeQuantity = 0 }
                 <Plus weight="fill" size={18} />
               </button>
             </InputQuantity>
+            <div>
             <button onClick={() => handleDeleteCoffeeFromOrder(coffeeName)}>
               <Trash size={21} />
               <p>REMOVER</p>
             </button>
+            </div>
           </CheckoutCoffeesConfigButton>
 
         </CheckoutCoffeesContainerInfoNoImage>

@@ -9,25 +9,62 @@ export const BackgroundStyled = styled.div`
   width: 100%;
   height: 100vh;
   z-index: 1;
+
+  @media screen and (max-width: 1500px){
+    min-width: 1500px
+  }
 `;
 
 export const Main = styled.div`
   position: relative;
-  height: 100vh;
+  height: 95vh;
 `;
 
 export const MainContent = styled.div`
   position: absolute;
-  top: 350px;
-  transform: translateY(-50%);
+  top: 200px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   z-index: 999;
+  width: 100%; 
+  box-sizing: border-box;
+
+  margin-bottom: 2rem;
 
   img {
     width: 29.75rem;
     height: 22.5rem;
     margin-right: 15rem;
+  }
+
+  @media screen and (max-width: 1500px) {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column; 
+    text-align: center;
+    margin-left: 8rem;
+
+    img {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    margin-left: 7rem;
+  }
+
+  @media screen and (max-width: 1150px) {
+    margin-left: 11rem;
+  }
+
+  @media screen and (max-width: 1150px) {
+    margin-left: 18rem;
+  }
+
+  @media screen and (max-width: 850px) {
+    margin-top: 5rem;
+    margin-left: 25rem;
   }
 `;
 
@@ -36,6 +73,12 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 15rem;
+
+
+  @media screen and (max-width: 1500px) {
+
+    margin-left: 0;
+  }
 `
 
 
@@ -65,6 +108,14 @@ export const Advantages_Section = styled.div`
   display: grid;
   grid-template-columns: 2fr 2fr;
   margin-right: 22rem;
+
+  @media screen and (max-width: 1850px) {
+    margin-right: 5rem;
+  }
+
+  @media screen and (max-width: 1500px) {
+    margin-left: 5rem;
+  }
 `
 
 export const Advantages = styled.div`

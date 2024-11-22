@@ -54,6 +54,20 @@ export const CheckoutCoffeesContainerInfo = styled.div`
     color: ${props => props.theme["brown-500"]};
     font-family: ${props => props.theme["default-font"]};
     font-weight: bolder;
+
+    @media screen and (max-width: 1300px) {
+      margin-left: 15.5rem;
+  }
+  }
+
+  @media screen and (max-width: 1900px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 1300px) {
+    display: flex;
+    flex-direction: row;
   }
 `;
 
@@ -96,10 +110,28 @@ export const CheckoutCoffeesConfigButton = styled.div`
       font-size: 0.8rem;
       font-family: ${props => props.theme["default-font"]};
     }
+
   }
 
   button:hover{
     background-color: ${props => props.theme["brown-100"]};
+  }
+
+  @media screen and (max-width: 1500px) {
+    display: flex;
+    flex-direction: column;
+    div + div{
+      margin-left: -0.6rem;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    display: flex;
+    flex-direction: row;
+
+    div + div{
+      margin-left: 0;
+    }
   }
 `
 
