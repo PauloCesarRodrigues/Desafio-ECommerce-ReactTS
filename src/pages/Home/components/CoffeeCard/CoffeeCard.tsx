@@ -1,42 +1,42 @@
-import { useContext, useEffect, useState } from "react";
-import { CoffeCardBuy, CoffeCardPrice, CoffeeCardInfo, CoffeeCardStyle, Description, InputQuantity, Tags } from "./styles";
+import { useContext, useEffect, useState } from "react"
+import { CoffeCardBuy, CoffeCardPrice, CoffeeCardInfo, CoffeeCardStyle, Description, InputQuantity, Tags } from "./styles"
 import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
-import { OrderContext } from "../../../../context/OrderContext";
+import { OrderContext } from "../../../../context/OrderContext"
 
 
 interface Coffee {
-  name: string;
-  value: number;
-  description: string;
-  tags: string[];
-  image: string;
+  name: string
+  value: number
+  description: string
+  tags: string[]
+  image: string
 }
 
 interface CoffeeCardProps { 
-  coffee: Coffee;
+  coffee: Coffee
 }
 
 interface CoffeeWithQuantity extends Coffee {
-  quantity?: number;
+  quantity?: number
 } 
 
 
 export function CoffeeCard({ coffee }: CoffeeCardProps) {
 
-  const context = useContext(OrderContext);
-  const { activeOrder, setActiveOrder } = context;
+  const context = useContext(OrderContext)
+  const { activeOrder, setActiveOrder } = context
   
 
-  const [coffeeQuantity, setCoffeeQuantity] = useState(0);
+  const [coffeeQuantity, setCoffeeQuantity] = useState(0)
 
   function handleMinusCoffeeQuantity(){
     if (coffeeQuantity === 0) return
-    setCoffeeQuantity(coffeeQuantity - 1);
+    setCoffeeQuantity(coffeeQuantity - 1)
   }
 
   function handlePlusCoffeeQuantity(){
     if (coffeeQuantity === 99) return
-    setCoffeeQuantity(coffeeQuantity + 1);
+    setCoffeeQuantity(coffeeQuantity + 1)
   }
 
   const [coffeeAllowedQuantity, setCoffeeAllowedQuantity] = useState(true)
@@ -45,27 +45,27 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
     if(coffeeQuantity > 0) setCoffeeAllowedQuantity(false)
     if(coffeeQuantity <= 0) setCoffeeAllowedQuantity(true)
 
-  }, [coffeeQuantity]);
+  }, [coffeeQuantity])
 
 
   function handleBuyCoffee(coffeeProp: CoffeeWithQuantity) {
-    if (coffeeQuantity === 0) return;
+    if (coffeeQuantity === 0) return
   
-    coffeeProp.quantity = coffeeQuantity;
+    coffeeProp.quantity = coffeeQuantity
   
     const updatedOrder = activeOrder.map((item) => {
       if (item.name === coffeeProp.name) {
-        return { ...item, quantity: coffeeQuantity };
+        return { ...item, quantity: coffeeQuantity }
       }
-      return item;
-    });
+      return item
+    })
   
-    const coffeeExists = activeOrder.some((item) => item.name === coffeeProp.name);
+    const coffeeExists = activeOrder.some((item) => item.name === coffeeProp.name)
     if (!coffeeExists) {
-      updatedOrder.push(coffeeProp);
+      updatedOrder.push(coffeeProp)
     }
   
-    setActiveOrder(updatedOrder);
+    setActiveOrder(updatedOrder)
     console.log(updatedOrder)
     setCoffeeQuantity(0)
   }
@@ -111,5 +111,5 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
         <button disabled={coffeeAllowedQuantity} onClick={() => handleBuyCoffee(coffee)}> <ShoppingCartSimple weight='fill' size={22}/> </button>
       </CoffeCardBuy>
     </CoffeeCardStyle>
-  );
+  )
 }

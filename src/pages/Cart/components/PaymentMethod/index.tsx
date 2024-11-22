@@ -1,40 +1,41 @@
-import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react";
+import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react"
 import {
   CartPaymentMethod,
   CartPaymentMethodHeader,
   CartPaymentMethodHeaderText,
   PaymentButton,
   PaymentMethods,
-} from "./styles";
-import { useContext, useState } from "react";
-import { OrderDataContext } from "../../../../context/OrderDataContext";
+} from "./styles"
+import { useContext, useState } from "react"
+import { OrderDataContext } from "../../../../context/OrderDataContext"
 
 export function PaymentMethod() {
-  const [activePaymentMethod, setActivePaymentMethod] = useState<string | null>(null);
+  const [activePaymentMethod, setActivePaymentMethod] = useState<string | null>(null)
 
-  const context = useContext(OrderDataContext);
-  const { setFinishedOrder } = context;
+  const context = useContext(OrderDataContext)
+  const { setFinishedOrder } = context
 
   const paymentMethods: { [key: string]: string } = {
     CreditCard: 'Cartão de Crédito',
     DebitCard: 'Cartão de Débito',
     Money: 'Dinheiro',
-  };
+  }
 
   function handleSelectPaymentMethod(paymentMethod: string) {
-    if (activePaymentMethod === paymentMethod) return;
-
-    setActivePaymentMethod(paymentMethod);
+    if (activePaymentMethod === paymentMethod) return
+  
+    setActivePaymentMethod(paymentMethod)
+  
     setFinishedOrder((prevOrder) => ({
       ...(prevOrder || {
-        street: '',
+        street: "",
         number: 0,
-        district: '',
-        city: '',
-        uf: '',
+        district: "",
+        city: "",
+        uf: "",
       }),
       paymentMethod: paymentMethods[paymentMethod],
-    }));
+    }))
   }
 
   return (
@@ -62,5 +63,5 @@ export function PaymentMethod() {
         ))}
       </PaymentMethods>
     </CartPaymentMethod>
-  );
+  )
 }

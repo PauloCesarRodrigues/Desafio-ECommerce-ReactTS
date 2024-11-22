@@ -1,56 +1,56 @@
-import { Minus, Plus, Trash } from "phosphor-react";
-import { CheckoutCoffeesContainer } from "../../styles";
-import { CheckoutCoffees, CheckoutCoffeesConfigButton, CheckoutCoffeesContainerInfo, CheckoutCoffeesContainerInfoNoImage, InputQuantity, LineCoffee } from "./styles";
-import { useContext, useEffect, useCallback } from "react";
-import { OrderContext } from "../../../../../../context/OrderContext";
+import { Minus, Plus, Trash } from "phosphor-react"
+import { CheckoutCoffeesContainer } from "../../styles"
+import { CheckoutCoffees, CheckoutCoffeesConfigButton, CheckoutCoffeesContainerInfo, CheckoutCoffeesContainerInfoNoImage, InputQuantity, LineCoffee } from "./styles"
+import { useContext, useEffect, useCallback } from "react"
+import { OrderContext } from "../../../../../../context/OrderContext"
 
 interface CoffeeFromOrderPage {
-  key: string;
-  coffeeName: string;
-  price: number;
-  imgSrc: string;
-  coffeeQuantity?: number;
+  key: string
+  coffeeName: string
+  price: number
+  imgSrc: string
+  coffeeQuantity?: number
 }
 
 export function CoffeeCheckout({ coffeeName, price, imgSrc, coffeeQuantity = 0 }: CoffeeFromOrderPage) {
-  const context = useContext(OrderContext);
-  const { setActiveOrder } = context;
+  const context = useContext(OrderContext)
+  const { setActiveOrder } = context
 
   const handleDeleteCoffeeFromOrder = useCallback((name: string) => {
     setActiveOrder((prevActiveOrder) => {
-      const updatedOrder = prevActiveOrder.filter(coffee => coffee.name !== name);
-      return updatedOrder;
-    });
-  }, [setActiveOrder]);
+      const updatedOrder = prevActiveOrder.filter(coffee => coffee.name !== name)
+      return updatedOrder
+    })
+  }, [setActiveOrder])
 
   useEffect(() => {
     if (coffeeQuantity === 0) {
-      handleDeleteCoffeeFromOrder(coffeeName);
+      handleDeleteCoffeeFromOrder(coffeeName)
     }
-  }, [coffeeQuantity, handleDeleteCoffeeFromOrder, coffeeName]);
+  }, [coffeeQuantity, handleDeleteCoffeeFromOrder, coffeeName])
 
   function handleMinusCoffeeQuantity(name: string) {
     setActiveOrder((prevActiveOrder) => {
       return prevActiveOrder.map((coffee) => {
-        const quantity = coffee.quantity ?? 0;  
+        const quantity = coffee.quantity ?? 0  
         if (coffee.name === name && quantity > 0) {
-          return { ...coffee, quantity: quantity - 1 };
+          return { ...coffee, quantity: quantity - 1 }
         }
-        return coffee;
-      });
-    });
+        return coffee
+      })
+    })
   }
 
   function handlePlusCoffeeQuantity(name: string) {
     setActiveOrder((prevActiveOrder) => {
       return prevActiveOrder.map((coffee) => {
-        const quantity = coffee.quantity ?? 0;  
+        const quantity = coffee.quantity ?? 0  
         if (coffee.name === name && quantity >= 0 && quantity < 99) {
-          return { ...coffee, quantity: quantity + 1 };
+          return { ...coffee, quantity: quantity + 1 }
         }
-        return coffee;
-      });
-    });
+        return coffee
+      })
+    })
   }
 
   return (
@@ -90,5 +90,5 @@ export function CoffeeCheckout({ coffeeName, price, imgSrc, coffeeQuantity = 0 }
       </CheckoutCoffeesContainer>
       <LineCoffee> </LineCoffee>
     </CheckoutCoffees>
-  );
+  )
 }

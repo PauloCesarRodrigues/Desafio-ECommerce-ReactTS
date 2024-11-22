@@ -1,16 +1,16 @@
-import { Clock, Coffee, Package, ShoppingCartSimple } from 'phosphor-react';
+import { Clock, Coffee, Package, ShoppingCartSimple } from 'phosphor-react'
 import CoffeeImg from './assets/Coffee.png'
 import { Advantages, Advantages_Section, AdvantagesIcon, BackgroundStyled, Content, Content_Text, Main, MainContent } from './styles'
-import { CoffeeSectionStyle, ContainerCoffee } from './components/CoffeeCard/styles';
-import { CoffeeCard } from './components/CoffeeCard/CoffeeCard';
-import  {coffees}  from './assets/coffeeCatalog.json';
+import { CoffeeSectionStyle, ContainerCoffee } from './components/CoffeeCard/styles'
+import { CoffeeCard } from './components/CoffeeCard/CoffeeCard'
+import  {coffees}  from './assets/coffeeCatalog.json'
 
 interface Coffee {
-  name: string;
-  value: number;
-  description: string;
-  tags: string[];
-  image: string;
+  name: string
+  value: number
+  description: string
+  tags: string[]
+  image: string
 }
 
 export function Home() {

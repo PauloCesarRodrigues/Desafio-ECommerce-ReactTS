@@ -112,3 +112,54 @@ export const FinishColumnIllustration = styled.div`
   margin-top: 6.7rem;
   margin-right: 15rem;;
 `
+
+
+export const OrderNotFound = styled.div`
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 10rem;
+
+  h2{
+    font-size: 2.5rem;
+    font-family: ${props => props.theme["title-font"]};
+    color: ${props => props.theme["brown-700"]};
+    -webkit-text-stroke: 1.5px ${props => props.theme["brown-700"]};
+    font-weight: bolder;
+  }
+
+
+  p{
+    margin-top: 2rem;
+
+    color: ${props => props.theme["white-100"]};
+
+    width: 15rem;
+    height: 3.875rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: ${props => props.theme["orange-500"]};
+    border-radius: 6px;
+
+    border: none;
+    stroke: none;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+  }
+
+  p:hover{
+    background-color: ${props => props.theme["orange-800"]};
+  }
+
+`

@@ -1,18 +1,18 @@
-import { MapPin } from "phosphor-react";
+import { MapPin } from "phosphor-react"
 import {
   CartContainer,
   FormCartContainer,
   CartFormHeader,
   CartFormHeaderText,
   FormColumn,
-} from "./styles";
-import { Checkout } from "./components/Checkout/index";
-import { PaymentMethod } from "./components/PaymentMethod/index";
-import { FormCart } from "./components/FormCart";
+} from "./styles"
+import { Checkout } from "./components/Checkout/index"
+import { PaymentMethod } from "./components/PaymentMethod/index"
+import { FormCart } from "./components/FormCart"
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as zod from "zod";
-import { FormProvider, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as zod from "zod"
+import { FormProvider, useForm } from "react-hook-form"
 
 
 const newAddressValidationSchema = zod.object({
@@ -22,13 +22,13 @@ const newAddressValidationSchema = zod.object({
   complement: zod.string().optional(),
   district: zod.string().min(1),
   city: zod.string().min(1),
-  uf: zod.string().min(1).max(2),
-});
+  uf: zod.string().min(2).max(2),
+})
 
 export function Cart() {
   const methods = useForm({
     resolver: zodResolver(newAddressValidationSchema),
-  });
+  })
 
   return (
     <CartContainer>
@@ -53,5 +53,5 @@ export function Cart() {
         <Checkout />
       </FormProvider>
     </CartContainer>
-  );
+  )
 }

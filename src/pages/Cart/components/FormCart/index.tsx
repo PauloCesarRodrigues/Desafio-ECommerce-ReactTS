@@ -1,5 +1,5 @@
- import { FormDataCity, FormDataDistrict, FormDataDistrictCityUF, FormDataNumberAndComplement, FormDataUf, FormData } from "./styles";
-import { useFormContext } from 'react-hook-form';
+ import { FormDataCity, FormDataDistrict, FormDataDistrictCityUF, FormDataNumberAndComplement, FormDataUf, FormData } from "./styles"
+import { useFormContext } from 'react-hook-form'
 
 export function FormCart(){
 

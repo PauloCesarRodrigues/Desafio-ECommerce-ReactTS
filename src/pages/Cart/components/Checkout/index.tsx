@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useContext, useEffect, useState } from "react";
-import { CoffeeCheckout } from "./components/CoffeeCheckout";
+import { useContext, useEffect, useState } from "react"
+import { CoffeeCheckout } from "./components/CoffeeCheckout"
 import {
   CartCheckout,
   CartCheckoutDeliveryPrice,
@@ -10,49 +10,49 @@ import {
   CartCheckoutTotalItemsPrice,
   CheckoutColumn,
   SubmitButtonText,
-} from "./styles";
+} from "./styles"
 
-import { useFormContext } from "react-hook-form";
-import { OrderContext } from "../../../../context/OrderContext";
-import { OrderDataContext } from "../../../../context/OrderDataContext";
-import { useNavigate } from "react-router-dom";
+import { useFormContext } from "react-hook-form"
+import { OrderContext } from "../../../../context/OrderContext"
+import { OrderDataContext } from "../../../../context/OrderDataContext"
+import { useNavigate } from "react-router-dom"
 
 export function Checkout() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const { handleSubmit } = useFormContext();
+  const { handleSubmit } = useFormContext()
 
-  const contextData = useContext(OrderDataContext);
-  const { setFinishedOrder, finishedOrder } = contextData;
+  const contextData = useContext(OrderDataContext)
+  const { setFinishedOrder, finishedOrder } = contextData
 
-  const [paymentMethodButtonStatus, setPaymentMethodButtonStatus] = useState(false);
-
-  useEffect(() => {
-    if (finishedOrder?.paymentMethod === "") setPaymentMethodButtonStatus(false);
-    if (finishedOrder?.paymentMethod !== "") setPaymentMethodButtonStatus(true);
-  }, [finishedOrder]);
-
-  const context = useContext(OrderContext);
-  const { activeOrder } = context;
-
-  const [allCoffeesPrice, setAllCoffeesPrice] = useState(0);
-
-  const [coffeeQuantityAllowed, setCoffeeQuantityAllowed] = useState(false);
+  const [, setIsPaymentMethodSelected] = useState(false)
 
   useEffect(() => {
-    if (activeOrder.length > 0) setCoffeeQuantityAllowed(true);
-    if (activeOrder.length === 0) setCoffeeQuantityAllowed(false);
+    if (finishedOrder?.paymentMethod === "") setIsPaymentMethodSelected(false)
+    if (finishedOrder?.paymentMethod !== "") setIsPaymentMethodSelected(true)
+  }, [finishedOrder])
+
+  const context = useContext(OrderContext)
+  const { activeOrder } = context
+
+  const [allCoffeesPrice, setAllCoffeesPrice] = useState(0)
+
+  const [coffeeQuantityAllowed, setCoffeeQuantityAllowed] = useState(false)
+
+  useEffect(() => {
+    if (activeOrder.length > 0) setCoffeeQuantityAllowed(true)
+    if (activeOrder.length === 0) setCoffeeQuantityAllowed(false)
 
     const totalCoffesPrice = activeOrder.reduce((total, coffee) => {
-      return total + coffee.value * (coffee.quantity || 1);
-    }, 0);
-    setAllCoffeesPrice(totalCoffesPrice);
-  }, [activeOrder]);
+      return total + coffee.value * (coffee.quantity || 1)
+    }, 0)
+    setAllCoffeesPrice(totalCoffesPrice)
+  }, [activeOrder])
 
   function onSubmit(data: any) {
 
-    if (!paymentMethodButtonStatus) return;
-    if (!coffeeQuantityAllowed) return;
+    if (!finishedOrder?.paymentMethod) return
+    if (!coffeeQuantityAllowed) return
 
     setFinishedOrder((prevOrder) => ({
       ...(prevOrder || {
@@ -69,20 +69,21 @@ export function Checkout() {
       city: data.city,
       uf: data.uf,
       paymentMethod: finishedOrder?.paymentMethod ?? "",
-    }));
-
-    navigate("/finished");
+    }))
+  
+    navigate("/finished")
   }
 
-  const fretePrice = 12.5;
-  const dynamicDeliverPrice = allCoffeesPrice === 0 ? 0 : fretePrice.toFixed(2);
 
-  const totalCoffeePrice = allCoffeesPrice === 0 ? 0 : (allCoffeesPrice + fretePrice).toFixed(2);
+  const fretePrice = 12.5
+  const dynamicDeliverPrice = allCoffeesPrice === 0 ? 0 : fretePrice.toFixed(2)
 
-  let isSubmitButtonActive = true;
+  const totalCoffeePrice = allCoffeesPrice === 0 ? 0 : (allCoffeesPrice + fretePrice).toFixed(2)
 
-  if (allCoffeesPrice > 0 && paymentMethodButtonStatus && coffeeQuantityAllowed) {
-    isSubmitButtonActive = false;
+  let isSubmitButtonActive = true
+
+  if (allCoffeesPrice > 0 && finishedOrder?.paymentMethod && coffeeQuantityAllowed) {
+    isSubmitButtonActive = false
   }
 
   return (
@@ -115,11 +116,15 @@ export function Checkout() {
             <p> R$ {Number(totalCoffeePrice).toFixed(2).replace(".", ",")}</p>
           </CartCheckoutTotalItemsPrice>
 
-          <button onClick={handleSubmit(onSubmit)} type="submit" disabled={isSubmitButtonActive}>
+          <button 
+            onClick={handleSubmit(onSubmit)} 
+            type="submit" 
+            disabled={isSubmitButtonActive}
+          >
             <SubmitButtonText>CONFIRMAR PEDIDO</SubmitButtonText>
           </button>
         </CartCheckoutPrice>
       </CartCheckout>
     </CheckoutColumn>
-  );
+  )
 }

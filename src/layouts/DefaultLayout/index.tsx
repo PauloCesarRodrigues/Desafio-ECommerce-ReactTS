@@ -2,13 +2,13 @@ import { Link, Outlet } from 'react-router-dom'
 import Logo from './assets/logo.svg'
 import { CoffeeQuantityOrder, Header, HeaderNav, NavCart, NavLocation } from './styles'
 import { MapPin, ShoppingCartSimple } from 'phosphor-react'
-import { useContext, useEffect, useState } from 'react';
-import { OrderContext } from '../../context/OrderContext';
+import { useContext, useEffect, useState } from 'react'
+import { OrderContext } from '../../context/OrderContext'
 
 export function Defaultlayout(){
 
-  const context = useContext(OrderContext);
-  const { activeOrder } = context;
+  const context = useContext(OrderContext)
+  const { activeOrder } = context
   
   const [isNotifyEmpty, setIsNotifyEmpty] = useState(true)
 
