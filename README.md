@@ -16,7 +16,6 @@ O desafio envolve o uso de tecnologias como:
 - React
 - TypeScript
 - ContextAPI
-- LocalStorage
 - Imutabilidade do estado
 - Componentização
 
