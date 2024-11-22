@@ -4,6 +4,11 @@ export const CoffeeSectionStyle = styled.section`
   position: absolute;
   z-index: 1000;
   margin-left: 15rem;
+  margin-top: 2rem;
+
+  @media screen and (max-width: 1700px){
+    margin-top: 6rem;
+  }
 
   @media screen and (max-width: 1200px){
     margin-top: 10rem;
