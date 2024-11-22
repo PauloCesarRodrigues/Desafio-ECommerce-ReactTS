@@ -20,6 +20,7 @@ export function Defaultlayout(){
 
   return(
     <>
+
     <Header>
       <Link to="/">
         <img src={Logo}/>
@@ -27,7 +28,7 @@ export function Defaultlayout(){
       <HeaderNav>
         <NavLocation> 
           <MapPin size={22} weight='fill'/>
-          <p>São Paulo, SP</p>
+          <p>São Paulo, SP </p>
         </ NavLocation>
 
         <NavCart>
