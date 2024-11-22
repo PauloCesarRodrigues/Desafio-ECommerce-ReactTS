@@ -21,7 +21,7 @@ O desafio envolve o uso de tecnologias como:
 
 Este projeto é uma excelente oportunidade para praticar conceitos como manipulação de estados, uso do ContextAPI, e renderização dinâmica de listas.
 
-Você pode visualizar a aplicação funcional [aqui](https://link-para-a-aplicação).
+Você pode visualizar a aplicação funcional aqui: https://coffeeecommercechallenge.vercel.app/
 
 ## Tecnologias Utilizadas
 
