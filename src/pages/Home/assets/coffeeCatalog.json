@@ -7,7 +7,7 @@
       "tags": [
         "TRADICIONAL"
       ],
-      "image": "/src/pages/Home/images/coffees/expressoTradicional.png"
+      "image": "/images/coffees/expressoTradicional.png"
     },
     {
       "name": "Expresso Americano",
@@ -16,7 +16,7 @@
       "tags": [
         "TRADICIONAL"
       ],
-      "image": "src/pages/Home/images/coffees/expressoAmericano.png"
+      "image": "images/coffees/expressoAmericano.png"
     },
     {
       "name": "Expresso Cremoso",
@@ -25,7 +25,7 @@
       "tags": [
         "TRADICIONAL"
       ],
-      "image": "src/pages/Home/images/coffees/expressoCremoso.png"
+      "image": "images/coffees/expressoCremoso.png"
     },
     {
       "name": "Expresso Gelado",
@@ -35,7 +35,7 @@
         "TRADICIONAL",
         "GELADO"
       ],
-      "image": "src/pages/Home/images/coffees/expressoGelado.png"
+      "image": "images/coffees/expressoGelado.png"
     },
     {
       "name": "Café com Leite",
@@ -45,7 +45,7 @@
         "TRADICIONAL",
         "COM LEITE"
       ],
-      "image": "src/pages/Home/images/coffees/cafeComLeite.png"
+      "image": "images/coffees/cafeComLeite.png"
     },
     {
       "name": "Latte",
@@ -55,7 +55,7 @@
         "TRADICIONAL",
         "COM LEITE"
       ],
-      "image": "src/pages/Home/images/coffees/latte.png"
+      "image": "images/coffees/latte.png"
     },
     {
       "name": "Capuccino",
@@ -65,7 +65,7 @@
         "TRADICIONAL",
         "COM LEITE"
       ],
-      "image": "src/pages/Home/images/coffees/capuccino.png"
+      "image": "images/coffees/capuccino.png"
     },
     {
       "name": "Macchiato",
@@ -75,7 +75,7 @@
         "TRADICIONAL",
         "COM LEITE"
       ],
-      "image": "src/pages/Home/images/coffees/macchiato.png"
+      "image": "images/coffees/macchiato.png"
     },
     {
       "name": "Mochaccino",
@@ -85,7 +85,7 @@
         "TRADICIONAL",
         "COM LEITE"
       ],
-      "image": "src/pages/Home/images/coffees/mochaccino.png"
+      "image": "images/coffees/mochaccino.png"
     },
     {
       "name": "Chocolate Quente",
@@ -95,7 +95,7 @@
         "ESPECIAL",
         "COM LEITE"
       ],
-      "image": "src/pages/Home/images/coffees/chocolateQuente.png"
+      "image": "images/coffees/chocolateQuente.png"
     },
     {
       "name": "Cubano",
@@ -106,7 +106,7 @@
         "ALCOÓLICO",
         "GELADO"
       ],
-      "image": "src/pages/Home/images/coffees/cubano.png"
+      "image": "images/coffees/cubano.png"
     },
     {
       "name": "Havaiano",
@@ -115,7 +115,7 @@
       "tags": [
         "ESPECIAL"
       ],
-      "image": "src/pages/Home/images/coffees/havaiano.png"
+      "image": "images/coffees/havaiano.png"
     },
     {
       "name": "Árabe",
@@ -124,7 +124,7 @@
       "tags": [
         "ESPECIAL"
       ],
-      "image": "src/pages/Home/images/coffees/arabe.png"
+      "image": "images/coffees/arabe.png"
     },
     {
       "name": "Irlandês",
@@ -134,7 +134,7 @@
         "ESPECIAL",
         "ALCOÓLICO"
       ],
-      "image": "src/pages/Home/images/coffees/irlandes.png"
+      "image": "images/coffees/irlandes.png"
     }
   ]
 }
