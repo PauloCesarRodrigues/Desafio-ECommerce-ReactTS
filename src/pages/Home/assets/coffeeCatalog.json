@@ -7,7 +7,7 @@
       "tags": [
         "TRADICIONAL"
       ],
-      "image": "src/pages/Home/images/coffees/expressoTradicional.png"
+      "image": "/src/pages/Home/images/coffees/expressoTradicional.png"
     },
     {
       "name": "Expresso Americano",
