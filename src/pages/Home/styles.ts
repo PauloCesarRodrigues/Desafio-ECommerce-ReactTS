@@ -6,7 +6,7 @@ export const BackgroundStyled = styled.div`
   background-image: url(${Background});
   background-size: cover;
   background-position: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   z-index: 1;
 
@@ -43,28 +43,10 @@ export const MainContent = styled.div`
     align-items: center; 
     flex-direction: column; 
     text-align: center;
-    margin-left: 8rem;
 
     img {
       display: none;
     }
-  }
-
-  @media screen and (max-width: 1300px) {
-    margin-left: 7rem;
-  }
-
-  @media screen and (max-width: 1150px) {
-    margin-left: 11rem;
-  }
-
-  @media screen and (max-width: 1150px) {
-    margin-left: 18rem;
-  }
-
-  @media screen and (max-width: 850px) {
-    margin-top: 5rem;
-    margin-left: 25rem;
   }
 `;
 

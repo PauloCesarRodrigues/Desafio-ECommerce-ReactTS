@@ -9,6 +9,7 @@ export const CheckoutColumn = styled.div`
 
   margin-bottom: 2rem;
 
+
   h1{
     margin-top: 1rem;
     -webkit-text-stroke: 0.5px ${props => props.theme["brown-500"]};
