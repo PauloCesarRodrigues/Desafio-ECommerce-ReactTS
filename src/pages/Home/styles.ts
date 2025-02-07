@@ -16,20 +16,31 @@ export const BackgroundStyled = styled.div`
 `;
 
 export const Main = styled.div`
-  position: relative;
-  height: 95vh;
+  width: 100%;
+  max-width: 1120px;
+
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-direction: column;
 `;
 
 export const MainContent = styled.div`
   position: absolute;
   top: 200px;
+
   display: grid;
   grid-template-columns: 2fr 1fr;
+
   z-index: 999;
-  width: 100%; 
   box-sizing: border-box;
 
-  margin-bottom: 2rem;
+  margin: 0 2rem 2rem 7rem;
+
 
   img {
     width: 29.75rem;
@@ -38,14 +49,14 @@ export const MainContent = styled.div`
   }
 
   @media screen and (max-width: 1500px) {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: column; 
-    text-align: center;
+    &{
+      display: flex;
+      align-items: center;
+    }
 
     img {
       display: none;
+      margin-right: 0rem;
     }
   }
 `;
@@ -54,12 +65,11 @@ export const MainContent = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 15rem;
-
+  margin-left: 3rem;
+  box-sizing: border-box;
 
   @media screen and (max-width: 1500px) {
-
-    margin-left: 0;
+    margin-right: 10rem;
   }
 `
 
@@ -73,6 +83,7 @@ export const Content_Text = styled.div`
     -webkit-text-stroke: 2.5px ${props => props.theme["brown-900"]};
     margin-bottom: 1rem;
     letter-spacing: 0.2rem;
+    flex-wrap: nowrap;
   }
 
   p{
@@ -82,6 +93,7 @@ export const Content_Text = styled.div`
     font-weight: normal;
     color: ${props => props.theme["brown-700"]};
     margin-bottom: 4rem;
+    flex-wrap: nowrap;
   }
 `
 
@@ -89,15 +101,8 @@ export const Content_Text = styled.div`
 export const Advantages_Section = styled.div`
   display: grid;
   grid-template-columns: 2fr 2fr;
-  margin-right: 22rem;
-
-  @media screen and (max-width: 1850px) {
-    margin-right: 5rem;
-  }
-
-  @media screen and (max-width: 1500px) {
-    margin-left: 5rem;
-  }
+  right: auto;
+  box-sizing: border-box;
 `
 
 export const Advantages = styled.div`

@@ -19,11 +19,11 @@ export const Header = styled.header`
 export const HeaderNav = styled.div`
   gap: 0.75rem;
   display: flex;
-  margin-right: 6rem;
+  margin-right: 10rem;
 
   @media screen and (max-width: 1150px) {
-    margin-left: 38rem;
-    margin-right: 5rem;
+    margin-left: auto;
+    margin-right: 10rem;
   }
 
 `

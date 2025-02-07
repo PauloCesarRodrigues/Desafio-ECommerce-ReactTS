@@ -4,26 +4,14 @@ export const CoffeeSectionStyle = styled.section`
   position: absolute;
   z-index: 1000;
   margin-left: 15rem;
-  margin-top: -6rem;
+  top: 800px;
 
-  @media screen and (max-width: 1919px){
-    margin-top: 6rem;
+  @media screen and (max-width: 1200px) {
+    top: 900px;
   }
 
-  @media screen and (max-width: 1600px){
-    margin-top: 8rem;
-  }
-
-  @media screen and (max-width: 1200px){
-    margin-top: 10rem;
-  }
-
-  @media screen and (max-width: 700px){
-    margin-top: 15rem;
-  }
-
-  @media screen and (max-width: 600px){
-    margin-top: 20rem;
+  @media screen and (max-width: 1000px) {
+    top: 1000px;
   }
 
   h1{
@@ -37,6 +25,7 @@ export const CoffeeSectionStyle = styled.section`
 `;
 
 export const ContainerCoffee = styled.div`
+
   
   display: grid;
   grid-template-columns: repeat(4, 1fr);
